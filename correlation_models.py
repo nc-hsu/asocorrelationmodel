@@ -133,14 +133,15 @@ def aso2024_correlation_int(im_pair: str, period1: float = None,
         if period > periods[-1]:
             return corr[-1]
 
-        interp = interp1d(periods, corr)
-        return interp(period)[0]
+        interp = interp1d(np.log(periods), corr)
+        return interp(np.log(period))[0]
 
     if imi == imj and period1 == period2:
         return 1.0
 
     # Both IMs are period-dependent
-    return interpolate_2d(periods_i, periods_j, corr, period1, period2)
+    return interpolate_2d(np.log(periods_i), np.log(periods_j), corr,
+                          np.log(period1), np.log(period2))
 
 
 def aso2024_correlation(im_pair: str, period1: float = None,

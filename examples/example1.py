@@ -1,4 +1,4 @@
-from correlation_models import aso2024_correlation_int, supported_ims, \
+from asocorrelationmodel.correlation_models import aso2024_correlation_int, supported_ims, \
     supported_im_pairs
 
 

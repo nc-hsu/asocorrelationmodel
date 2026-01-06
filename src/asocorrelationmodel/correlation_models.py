@@ -4,8 +4,8 @@ import warnings
 import numpy as np
 from scipy.interpolate import interp1d, RegularGridInterpolator
 import json
-import activation_functions
-
+import asocorrelationmodel.activation_functions as activation_functions
+import importlib.resources as res
 
 def read_json(filename: Union[Path, dict]):
     if isinstance(filename, Path) or isinstance(filename, str):
@@ -69,10 +69,8 @@ ACTIVATION_FUNCTIONS = {
     "sigmoid": activation_functions.sigmoid,
 }
 
-
-CORRELATIONS_ANN = read_json(Path.cwd() / "correlation_models.json")
-MODELS_ANN = read_json(Path.cwd() / "corr_ann.json")
-
+CORRELATIONS_ANN = read_json(res.files("asocorrelationmodel").joinpath("correlation_models.json"))
+MODELS_ANN = read_json(res.files("asocorrelationmodel").joinpath("corr_ann.json"))
 
 def supported_ims():
     print(SUPPORTED_IM_NAMES)

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asocorrelationmodel"
+version = "0.1.0"
+description = "A Python library for selecting ground motions for nonlinear structural response analysis under earthquake loading."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "GNU General Public License v3.0" }
+
+dependencies = [
+    "numpy==1.26.4",
+    "scipy==1.12.0"
+
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

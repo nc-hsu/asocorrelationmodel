@@ -1,4 +1,4 @@
-from correlation_models import aso2024_correlation
+from asocorrelationmodel.correlation_models import aso2024_correlation
 
 
 # Example 1 - SA-FIV3
